@@ -17,7 +17,7 @@ system, you may run the following commands to install this project
 cookbook and boot Ariadne:
 
     cd path/to/ariadne
-    rake "init_project[https://github.com/patcon/ariadne-wet-boew-drupal]"
+    rake "init_project[https://github.com/wet-boew/ariadne-wet-boew-drupal]"
     project=wet-boew-drupal branch=master vagrant up
 
 When the Chef run has completed, your local site with have a
