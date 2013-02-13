@@ -1,6 +1,7 @@
 repo = node['ariadne']['project']
 site_url = "#{repo}.dev"
 branch = node['ariadne']['branch']
+node['php']['directives']['memory_limit'] = "292M"
 
 web_app site_url do
   cookbook "ariadne"
