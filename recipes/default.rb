@@ -5,7 +5,7 @@ node['php']['directives']['memory_limit'] = "292M"
 
 web_app site_url do
   cookbook "ariadne"
-  template "sites.conf.erb"
+  template "drupal-site.conf.erb"
   server_name site_url
   server_aliases [ "*.#{site_url}" ]
   docroot "/mnt/www/html/#{repo}"
@@ -38,17 +38,10 @@ bash "Installing site..." do
   user "vagrant"
   group "vagrant"
   code <<-"EOH"
-<<<<<<< HEAD
     drush site-install wetkit wetkit_theme_form.theme=wetkit_adaptivetheme \
       --root=/mnt/www/html/#{repo} \
       --db-url=mysql://root:root@localhost/wetkit \
       --account-pass=S4mpleP^ssword \
-=======
-    drush site-install wetkit wetkit_wetboew_selection_form.theme=wetkit_adaptivetheme \
-      --root=/mnt/www/html/#{repo} \
-      --db-url=mysql://root:root@localhost/wetkit \
-      --account-pass=WetKit@2012 \
->>>>>>> 2dc0dda408a26e08c2b2f2a79cc8028394dc139a
       --site-name=#{repo} \
       --yes
   EOH
